@@ -8,5 +8,6 @@ namespace Workshop_V1
 {
     public class Class1
     {
+        int hadas = 15;
     }
 }
