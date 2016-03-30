@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1
+namespace Presentation
 {
     public class Class1
     {
-        int hadas = 15;
-        int jenny = 13;
     }
 }
