@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.UserP
+{
+    class User
+    {
+        String memberName;
+        String memberPassword;
+        List<User> friendsList;
+
+        List<Message> myMessages;
+    }
+}

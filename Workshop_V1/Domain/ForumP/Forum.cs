@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1.UserP
+namespace Domain.ForumP
 {
-    class Role
+    class Forum
     {
-      
+        String forumName;
+        private List<SubForum> mySubForum;
     }
 }

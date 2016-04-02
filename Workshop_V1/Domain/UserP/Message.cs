@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1
+namespace Domain.UserP
 {
-    class User
+    class Message
     {
-        String memberName;
-        String memberPassword;
-        List<User> friendsList;
+        String head;
+        String content;
+        String data;
+        User sender;
     }
 }

@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1.UserP
+namespace Domain.ForumP
 {
-    class Message
+    class friendsGroup
     {
-        String head;
-        String content;
-        String data;
-        User sender;
+        List<UserP.User> listOfFriend;
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1.UserP
+namespace Domain.UserP
 {
-    class ForumAdminRole
+    class MemberRole
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workshop_V1
+namespace Domain.UserP
 {
-    class SubForum
+    class GuideRole
     {
     }
 }

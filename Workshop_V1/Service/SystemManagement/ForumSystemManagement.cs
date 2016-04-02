@@ -43,10 +43,7 @@ namespace Service.SystemManagement
             return true;
         }
 
-        public bool createNewForum(String adminToBe, String forunName)
-        {
-            return true;
-        }
+
         
 
 
