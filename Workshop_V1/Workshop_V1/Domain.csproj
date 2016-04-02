@@ -41,7 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForumP\Comment.cs" />
+    <Compile Include="ForumP\Forum.cs" />
+    <Compile Include="ForumP\ForumProperties.cs" />
+    <Compile Include="Query\ForumQuery.cs" />
+    <Compile Include="Query\UserQuery.cs" />
+    <Compile Include="SystemP\ForumSystem.cs" />
+    <Compile Include="ForumP\friendsGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ForumP\SubForum.cs" />
+    <Compile Include="ForumP\Thread.cs" />
+    <Compile Include="UserP\ForumAdminRole.cs" />
+    <Compile Include="UserP\GuestRole.cs" />
+    <Compile Include="UserP\GuideRole.cs" />
+    <Compile Include="UserP\MemberRole.cs" />
+    <Compile Include="UserP\Message.cs" />
+    <Compile Include="UserP\Role.cs" />
+    <Compile Include="UserP\SuperAdminRole.cs" />
+    <Compile Include="UserP\User.cs" />
+    <Compile Include="UserP\UserProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
