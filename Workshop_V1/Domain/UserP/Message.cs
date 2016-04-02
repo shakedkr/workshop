@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Domain.UserP
 {
-    class Message
+    public class Message
     {
-        String head;
-        String content;
-        String data;
-        User sender;
+        string head;
+        string content;
+        string data;
+        string sender;
+
+        public Message(string _head, string _content, string _data, string _sender)
+        {
+            head = _head;
+            content = _content;
+            data = _data;
+            sender = _sender;
+        }
     }
 }

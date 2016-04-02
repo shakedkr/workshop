@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.UserP
+namespace AcceptanceTests
 {
-    class GuideRole
+    class RealBridge 
     {
-        List<ForumP.SubForum> subForumList;
     }
 }

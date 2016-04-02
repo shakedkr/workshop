@@ -9,10 +9,11 @@ namespace Domain.ForumP
     class Comment
     {
         private List<Comment> comments;
-        String commentId;
-        String date;
-        String userName;
-        String head;
-        String body;
+        string commentId;
+        string date;
+        string userName;
+        string head;
+        string body;
+        
     }
 }

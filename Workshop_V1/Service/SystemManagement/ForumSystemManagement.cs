@@ -3,42 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Query;
 
 namespace Service.SystemManagement
 {
     class ForumSystemManagement
     {
-        public bool registerSuperAdmin(String userName, String password, String email)
+        ForumQuery forumQuery;
+        UserQuery userQuery;
+        public ForumSystemManagement(ForumQuery f,UserQuery u )
+        {
+            forumQuery = f;
+            userQuery = u;
+        }
+
+        public bool registerSuperAdmin(string userName, string password, string email)
         {
             return true;
         }
 
-        public bool init(String userName, String password)
+        public bool init(string userName, string password)
         {
             return true;
         }
 
-        public bool createNewForum(String adminToBe, String forumName)
+        public bool createNewForum(string adminToBe, string forumName)
         {
             return true;
         }
 
-        public bool registerUser(String username, String password, String email)
+        public bool registerUser(string username, string password, string email)
         {
             return true;
         }
 
-        public bool userSignIn(String userName, String password)
+        public bool userSignIn(string userName, string password)
         {
             return true;
         }
 
-        public bool userSignOut(String userName)
+        public bool userSignOut(string userName)
         {
             return true;
         }
 
-        public bool notify(String userName, int commentId)
+        public bool notify(string userName, int commentId)
         {
             return true;
         }

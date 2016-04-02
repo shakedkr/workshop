@@ -3,27 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Query;
+
 
 namespace Service.ForumManagement
-{
+{  
     class ForumManagement
     {
+        ForumQuery forumQuery;
 
-        public bool defineProperties(String forumName, String[] prop) {
+        public ForumManagement(ForumQuery f)
+        {
+            forumQuery = f;
+        }
+
+
+        public bool defineProperties(string forumName, string[] prop) {
             return true;
         } 
 
-        public bool addSubForum (String forumName, String guideToBe, String subForumName){
+        public bool addSubForum (string forumName, string guide, string subForumName){
+            if (!forumQuery.doesForumExist(forumName))
+               return false;                                                                                                                           
+            forumQuery.addSubForumToForum(forumName, subForumName);
+            forumQuery.setGuide(subForumName, guide);
             return true;
         }
 
         /* return threadId */
-       public int addThread(String forumName,String subForumName,String headline,String content){
-           return 0;
-       }
+       public int addThread(string forumName,string subForumName,string headline,string content){
+           if (!forumQuery.doesSubForumExist(forumName, subForumName))
+               return -1;
+           return forumQuery.addThread(forumName, subForumName, headline, content);   
+           
+        }
 
             
-       public bool addForumGuide (String forumName, String subForumName , String guideName){
+       public bool addForumGuide (string forumName, string subForumName , string guideName){
+                    
            return true;
        }
 
@@ -32,16 +49,26 @@ namespace Service.ForumManagement
            return true;
        }
 
-       public bool deleteSubForum(string forumname, string subForumName)
+       public bool deleteSubForum(string forumName, string subForumName)
        {
-           return true;           
+           if (!forumQuery.doesSubForumExist(forumName,subForumName))
+            return false;
+           forumQuery.deleteSubForum(forumName, subForumName);
+           return true;
        }
 
 
         /* return comment id */
-       public String addComment(string forumname, string subforumname, int threadID, string userName, string headline, string content)
+       public string addComment(string forumname, string subforumname, 
+           int threadID, string userName, string headline, string content)
        {
-           return "";
+           if (!forumQuery.doesSubForumExist(forumname, subforumname))
+               return "";
+           return forumQuery.addComment(forumname, subforumname, threadID,
+               userName, headline, content);
+                  
+           
+
        }
 
        

@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Domain.ForumP
 {
-    class SubForum
+    public class SubForum
     {
+        string subForumName;
+        private List<Thread> subForumThread;
+
+        public SubForum(string name)
+        {
+            subForumName = name;
+        }
+
+
+        public string getSubForumName()
+        {
+            return subForumName;
+        }
+
     }
 }
