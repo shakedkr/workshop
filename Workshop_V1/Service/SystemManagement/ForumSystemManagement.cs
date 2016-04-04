@@ -9,14 +9,7 @@ namespace Service.SystemManagement
 {
     public class ForumSystemManagement
     {
-        ForumQuery forumQuery;
-        UserQuery userQuery;
-        public ForumSystemManagement(ForumQuery f,UserQuery u )
-        {
-            forumQuery = f;
-            userQuery = u;
-        }
-
+        
         public bool registerSuperAdmin(string userName, string password, string email)
         {
             return true;
@@ -47,7 +40,22 @@ namespace Service.SystemManagement
             return true;
         }
 
-        public bool notify(string userName, int commentId)
+        public bool notify(string userName, string commentId)
+        {
+            return true;
+        }
+
+        public bool deleteUser(string userName)
+        {
+            return true;
+        }
+
+        public bool viewMailNotification(string forum_name, string sub_forum_name, int threadid, string email) 
+        {
+            return true;
+        }
+
+        public bool validateEmail(string email)
         {
             return true;
         }

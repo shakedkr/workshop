@@ -17,6 +17,8 @@ namespace AcceptanceTests
         bool notify(string username, double commentId);
         bool deleteForum(string forumname);
         bool vanishUser(string userName);
+        bool viewMailNotification(string forum_name, string sub_forum_name, int threadid, string email);
+        bool validateEmail(string email);
 
         //User
         bool updateUserRole(string username, string role);
@@ -25,14 +27,16 @@ namespace AcceptanceTests
         bool sendMessage(string username, string toUserName, string headline, string content);
 
         //Forum
-        int addThread(string forumName, string subForumName, string headline, string content); //(returns the id of the new thread)
+        int addThread(string forumName, string subForumName, string headline, string content,string username); //(returns the id of the new thread)
         bool addSubForum(string forumName, string guideToBe, string subForumName);
         bool defineProperties(string forumName, string[] prop);
         bool registerForumAdmin(string forumname, string username);
         bool addForumGuide(string forumname, string subforumname, string guideToBe);
-        double AddComment(string forumname, string subforumname, int threadID, string userName, string headline, string content);
+        string AddComment(string forumname, string subforumname, int threadID, string userName, string headline, string content);
         bool deleteSubForum(string forumname, string subForumName);
         string deleteComment(string forumname, string subforumname, double commentID);
+
+        
  
         }
 }

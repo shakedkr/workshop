@@ -12,14 +12,7 @@ namespace Service.ForumManagement
     public class ForumManagement
     {
         
-        /*
-         * ForumQuery forumQuery;
-
-        public ForumManagement(ForumQuery f)
-        {
-            forumQuery = f;
-        }*/
-
+       
 
         public bool defineProperties(string forumName, string[] prop) {
             return true;
@@ -34,7 +27,7 @@ namespace Service.ForumManagement
         }
 
         /* return threadId */
-       public int addThread(string forumName,string subForumName,string headline,string content){
+       public int addThread(string forumName,string subForumName,string headline,string content,string username){
            if (!GlobalsService.forumQuery.doesSubForumExist(forumName, subForumName))
                return -1;
            return GlobalsService.forumQuery.addThread(forumName, subForumName, headline, content);   
@@ -60,6 +53,11 @@ namespace Service.ForumManagement
            return true;
        }
 
+       public bool deleteForum(string forumname)
+       {
+           return false;
+       }
+
 
         /* return comment id */
        public string addComment(string forumname, string subforumname, 
@@ -72,6 +70,11 @@ namespace Service.ForumManagement
                   
            
 
+       }
+
+       public string deleteComment(string forumname, string subforumname, double commentID)
+       {
+           return "";
        }
 
        
