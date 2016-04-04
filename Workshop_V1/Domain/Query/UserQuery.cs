@@ -10,15 +10,10 @@ namespace Domain.Query
 {
     public class UserQuery
     {
-        ForumSystem forumSystem;
-        public UserQuery(ForumSystem fs)
-        {
-            forumSystem = fs;
-        }
 
         public bool doesFriendExist(string friendName)
         {
-            List<User> users=  forumSystem.getUsers();
+            List<User> users=  GlobalsDomain.forumSystem.getUsers();
             foreach (User u in users)
             {
                 if (u.getUserName().Equals(friendName))
@@ -31,7 +26,7 @@ namespace Domain.Query
         public void changePassword(string friendName, string newPass)
         {
             User tmp=null;
-            List<User> users = forumSystem.getUsers();
+            List<User> users = GlobalsDomain.forumSystem.getUsers();
             foreach (User u in users)
             {
                 if (u.getUserName().Equals(friendName))
@@ -45,7 +40,7 @@ namespace Domain.Query
         public bool checkPassword(string userName, string pass)
         {
             User tmp = null;
-            List<User> users = forumSystem.getUsers();
+            List<User> users = GlobalsDomain.forumSystem.getUsers();
             foreach (User u in users)
             {
                 if (u.getUserName().Equals(userName))
@@ -70,8 +65,8 @@ namespace Domain.Query
 
         public User findUserByName(string u)
         {
-            User ans;
-            List<User> users = forumSystem.getUsers();
+
+            List<User> users = GlobalsDomain.forumSystem.getUsers();
             foreach (User someUser in users)
             {
                 if (someUser.getUserName().Equals(u))

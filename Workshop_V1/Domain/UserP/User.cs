@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.UserP
 {
-    class User
+    public class User
     {
         string memberName;
         string memberPassword;

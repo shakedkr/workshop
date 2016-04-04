@@ -7,7 +7,7 @@ using Domain.Query;
 
 namespace Service.SystemManagement
 {
-    class ForumSystemManagement
+    public class ForumSystemManagement
     {
         ForumQuery forumQuery;
         UserQuery userQuery;

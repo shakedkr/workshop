@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Domain.Query;
 
 
+
 namespace Service.ForumManagement
 {  
-    class ForumManagement
+    public class ForumManagement
     {
-        ForumQuery forumQuery;
+        
+        /*
+         * ForumQuery forumQuery;
 
         public ForumManagement(ForumQuery f)
         {
             forumQuery = f;
-        }
+        }*/
 
 
         public bool defineProperties(string forumName, string[] prop) {
@@ -23,18 +26,18 @@ namespace Service.ForumManagement
         } 
 
         public bool addSubForum (string forumName, string guide, string subForumName){
-            if (!forumQuery.doesForumExist(forumName))
-               return false;                                                                                                                           
-            forumQuery.addSubForumToForum(forumName, subForumName);
-            forumQuery.setGuide(subForumName, guide);
+            if (!GlobalsService.forumQuery.doesForumExist(forumName))
+               return false;
+            GlobalsService.forumQuery.addSubForumToForum(forumName, subForumName);
+            GlobalsService.forumQuery.setGuide(subForumName, guide);
             return true;
         }
 
         /* return threadId */
        public int addThread(string forumName,string subForumName,string headline,string content){
-           if (!forumQuery.doesSubForumExist(forumName, subForumName))
+           if (!GlobalsService.forumQuery.doesSubForumExist(forumName, subForumName))
                return -1;
-           return forumQuery.addThread(forumName, subForumName, headline, content);   
+           return GlobalsService.forumQuery.addThread(forumName, subForumName, headline, content);   
            
         }
 
@@ -51,9 +54,9 @@ namespace Service.ForumManagement
 
        public bool deleteSubForum(string forumName, string subForumName)
        {
-           if (!forumQuery.doesSubForumExist(forumName,subForumName))
+           if (!GlobalsService.forumQuery.doesSubForumExist(forumName, subForumName))
             return false;
-           forumQuery.deleteSubForum(forumName, subForumName);
+           GlobalsService.forumQuery.deleteSubForum(forumName, subForumName);
            return true;
        }
 
@@ -62,9 +65,9 @@ namespace Service.ForumManagement
        public string addComment(string forumname, string subforumname, 
            int threadID, string userName, string headline, string content)
        {
-           if (!forumQuery.doesSubForumExist(forumname, subforumname))
+           if (!GlobalsService.forumQuery.doesSubForumExist(forumname, subforumname))
                return "";
-           return forumQuery.addComment(forumname, subforumname, threadID,
+           return GlobalsService.forumQuery.addComment(forumname, subforumname, threadID,
                userName, headline, content);
                   
            

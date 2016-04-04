@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Domain.Query;
 namespace Service.UserManagement
 {
-    class UserSystem
+    public class UserSystem
     {
         UserQuery userQuery;
         

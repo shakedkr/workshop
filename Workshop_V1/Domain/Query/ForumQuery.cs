@@ -9,15 +9,13 @@ namespace Domain.Query
 {
     public class ForumQuery
     {
-        ForumSystem forumSystem;
-        public ForumQuery(ForumSystem fs)
-        {
-            forumSystem = fs;
-        }
+        
+        
+      
         
         public bool doesForumExist (string forumName){
             string fName;
-            List<Forum> forums = forumSystem.getForums();
+            List<Forum> forums = GlobalsDomain.forumSystem.getForums();
             foreach (Forum f in forums){
                 fName = f.getForumName();
                 if (fName.Equals(forumName))
@@ -40,7 +38,7 @@ namespace Domain.Query
         public void addSubForumToForum (string forumName, string subForum){
             string fName;
             Forum ans=null;
-            List<Forum> forums = forumSystem.getForums();
+            List<Forum> forums = GlobalsDomain.forumSystem.getForums();
             foreach (Forum f in forums)
             {
                 fName = f.getForumName();
@@ -56,7 +54,7 @@ namespace Domain.Query
             Forum tmp= null;
             SubForum ans = null;
             List<SubForum> subForums = null;
-            List<Forum> forums = forumSystem.getForums();
+            List<Forum> forums = GlobalsDomain.forumSystem.getForums();
             foreach (Forum f in forums)
             {
                subForums = f.getSubForum();
